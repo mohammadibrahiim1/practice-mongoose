@@ -16,11 +16,22 @@ const updateUser = async (req, res) => {
   console.log(response);
   res.send(response);
 };
+
 const deleteUser = async (req, res) => {
   const _id = req.params.id;
   const response = await User.deleteOne({ _id: _id });
-  console.log(response);
-  res.send(response);
+  if (response) {
+    res.status(200).send({
+      success: true,
+      message: "deleted product successfully",
+      data: response,
+    });
+  } else {
+    res.status(404).send({
+      success: false,
+      message: "product not found",
+    });
+  }
 };
 
 module.exports.userController = {

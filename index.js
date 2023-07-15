@@ -11,7 +11,7 @@ const userRouter = require("./routes/user");
 // mongodb
 
 // const { MongoClient, ServerApiVersion } = require("mongodb");
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.wuwpwwx.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.wuwpwwx.mongodb.net/practice-mongoose?retryWrites=true&w=majority`;
 mongoose.connect(uri);
 console.log(uri);
 

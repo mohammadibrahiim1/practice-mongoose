@@ -7,27 +7,29 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  email: {
+  email: { 
     type: String,
     required: true,
   },
-  image: {
+  image: { 
     type: String,
     required: true,
   },
-  blog: [
+  blogs: [
     {
-      id: {
-        type: Number,
+      title: {
+        type: String,
         required: true,
       },
 
-      description: {
+      content: {
         type: String,
         required: true,
       },
     },
   ],
+  createdAt: { type: Date, default: Date.now },
+ 
 });
 
 const User = mongoose.model("User", userSchema);

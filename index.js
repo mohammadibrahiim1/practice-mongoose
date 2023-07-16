@@ -7,6 +7,7 @@ require("dotenv").config();
 
 // routes
 const userRouter = require("./routes/user");
+const postRouter = require("./routes/post");
 
 // mongodb
 
@@ -30,6 +31,7 @@ app.use(express.json());
 const port = process.env.PORT || 5000;
 
 app.use("/api/v1", userRouter);
+app.use("/api/v1", postRouter);
 
 app.get("/", (req, res) => {
   res.send("simple node server running");
